@@ -1,0 +1,40 @@
+server:
+  port: 9090
+  
+spring:
+  datasource:
+    name: kingdombiao
+    url: jdbc:mysql://127.0.0.1:3306/dubbo
+    username: root
+    password: root
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+    driver-class-name: com.mysql.jdbc.Driver
+    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #mapper映射xml文件的所在路径
+  type-aliases-package: com.kingdombiao.entities #对应的实体类路径
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  
+#pagehelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+    
+    
