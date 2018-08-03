@@ -39,9 +39,9 @@ public class UserServiceImpl implements UserService {
 		}*/
 		
 		/* 执行失败比率 */
-        /*if (Math.random() > (double)(Math.random() * 1000) / 100) {
+        if (Math.random() > (double)(Math.random() * 1000) / 100) {
             throw new RuntimeException("运行异常");
-        }*/
+        }
 		
 		
 			Thread.sleep(10000);
